@@ -1,0 +1,212 @@
+/* RESET */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.layout-base {
+  display: grid;
+
+  grid-template-columns: 290px 1fr;
+
+  width: 100%;
+
+  height: 100vh;
+
+  transition: grid-template-columns 0.3s ease;
+}
+
+/* QUANDO RECOLHIDO */
+.layout-base.sidebar-collapsed {
+  grid-template-columns: 92px 1fr;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 290px;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid #d1d5db;
+  background: #ffffff;
+}
+
+/* ÁREA DIREITA */
+/* ÁREA DIREITA */
+.layout-main,
+.main-content,
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* TOPBAR */
+.topbar {
+  flex-shrink: 0;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #d1d5db;
+}
+
+/* ÁREA PEDIDOS */
+.pedidos-dashboard,
+.dashboard-page,
+.dashboard-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+/* =========================================
+   SCROLLBAR GLOBAL PREMIUM
+   Desktop + Sidebar + Cards
+   ========================================= */
+
+/* FIREFOX */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+/* CHROME / EDGE / SAFARI */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #94a3b8, #64748b);
+  border-radius: 999px;
+  border: 2px solid #f1f5f9;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #64748b, #475569);
+}
+
+/* =========================================
+   SIDEBAR SCROLL
+   ========================================= */
+.sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-radius: 999px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #cbd5e1, #94a3b8);
+  border-radius: 999px;
+  border: 2px solid #f8fafc;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #94a3b8, #64748b);
+}
+/* =========================================
+   ÁREA PEDIDOS
+   ========================================= */
+.pedidos-dashboard::-webkit-scrollbar,
+.pedidos-lista-cards::-webkit-scrollbar,
+.layout-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.pedidos-dashboard::-webkit-scrollbar-track,
+.pedidos-lista-cards::-webkit-scrollbar-track,
+.layout-content::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 999px;
+}
+
+.pedidos-dashboard::-webkit-scrollbar-thumb,
+.pedidos-lista-cards::-webkit-scrollbar-thumb,
+.layout-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c7e84e, #84cc16);
+  border-radius: 999px;
+  border: 2px solid #e2e8f0;
+}
+
+.pedidos-dashboard::-webkit-scrollbar-thumb:hover,
+.pedidos-lista-cards::-webkit-scrollbar-thumb:hover,
+.layout-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #84cc16, #65a30d);
+}
+
+/* =========================================
+   MODAL
+   ========================================= */
+.pedido-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pedido-modal::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+/* =========================================
+   CORRIGE BARRA MUITO COLADA
+   ========================================= */
+.sidebar,
+.pedidos-dashboard,
+.layout-content {
+  scrollbar-gutter: stable;
+}
+
+/* ÁREA PRINCIPAL */
+.layout-main {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+/* CONTEÚDO INTERNO */
+.layout-content {
+  flex: 1;
+
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 20px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}

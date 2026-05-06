@@ -1,0 +1,303 @@
+/* =========================================
+   SUBSTITUA COMPLETAMENTE AS CLASSES DO MODAL
+   NO PedidosPage.css
+   (as antigas podem estar sobrescrevendo)
+   ========================================= */
+
+/* OVERLAY */
+.pedido-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+
+  background: rgba(15, 23, 42, 0.72);
+
+  z-index: 9999;
+}
+
+/* MODAL */
+.pedido-modal {
+  position: relative;
+
+  width: min(860px, 95vw);
+
+  max-height: 92vh;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+
+  overflow: hidden;
+}
+
+/* ÁREA INTERNA */
+.pedido-modal-content {
+  padding: 16px 18px 18px;
+
+  max-height: 92vh;
+
+  overflow-y: auto;
+}
+
+/* SCROLL */
+.pedido-modal-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+.pedido-modal-content::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.45);
+  border-radius: 999px;
+}
+
+/* BOTÃO FECHAR */
+.fechar-modal {
+  position: absolute;
+
+  top: 8px;
+  right: 10px;
+
+  width: 32px;
+  height: 32px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  color: #0f172a;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  z-index: 5;
+}
+
+/* TÍTULO */
+.pedido-modal-content h2 {
+  margin: 0 0 12px;
+
+  font-size: 22px;
+
+  line-height: 1.1;
+}
+
+/* INFORMAÇÕES */
+.pedido-modal-content p {
+  margin: 3px 0;
+
+  font-size: 13px;
+
+  line-height: 1.3;
+}
+
+/* BLOCO ITENS */
+.pedido-modal-produtos {
+  margin-top: 12px;
+}
+
+/* TÍTULO ITENS */
+.pedido-modal-produtos h3 {
+  margin-bottom: 8px;
+
+  font-size: 15px;
+}
+
+/* CARD ITEM */
+.pedido-modal-produto-card {
+  padding: 8px 10px;
+
+  margin-bottom: 8px;
+
+  border-radius: 12px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+}
+
+/* CABEÇALHO ITEM */
+.pedido-modal-produto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-bottom: 4px;
+}
+
+.pedido-modal-produto-header strong {
+  font-size: 14px;
+
+  line-height: 1.25;
+}
+
+/* PREÇO */
+.pedido-modal-produto-preco {
+  font-size: 15px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+/* UNITÁRIO */
+.pedido-modal-produto-unitario {
+  margin-bottom: 6px;
+
+  font-size: 11px;
+
+  color: #64748b;
+}
+
+/* SUBITENS */
+.pedido-modal-subitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  padding: 4px 8px;
+
+  margin-bottom: 3px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  line-height: 1.25;
+}
+
+/* INFO */
+.pedido-modal-subitem-info {
+  background: #f1f5f9;
+}
+
+/* EXTRA */
+.pedido-modal-subitem-pago {
+  background: #ecfdf5;
+
+  border-left: 3px solid #22c55e;
+}
+
+/* PREÇO SUBITEM */
+.pedido-modal-subitem-preco {
+  font-size: 11px;
+
+  font-weight: 700;
+
+  min-width: 56px;
+
+  text-align: right;
+}
+
+/* RESUMO */
+.pedido-modal-resumo-financeiro {
+  margin-top: 12px;
+
+  padding-top: 12px;
+
+  border-top: 2px dashed #cbd5e1;
+}
+
+/* LINHAS */
+.pedido-modal-resumo-linha,
+.pedido-modal-resumo-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* SUBTOTAL */
+.pedido-modal-resumo-linha {
+  margin-bottom: 7px;
+
+  font-size: 13px;
+}
+
+/* TOTAL */
+.pedido-modal-resumo-total {
+  margin-top: 8px;
+
+  padding-top: 8px;
+
+  border-top: 1px solid #cbd5e1;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+/* =========================================
+   DESKTOP GRANDE
+   ========================================= */
+@media (min-width: 1400px) {
+  .pedido-modal {
+    width: min(900px, 90vw);
+  }
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+@media (max-width: 992px) {
+  .pedido-modal {
+    width: 96vw;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+  .pedido-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .pedido-modal {
+    width: 100vw;
+
+    max-height: 94vh;
+
+    border-radius: 18px 18px 0 0;
+  }
+
+  .pedido-modal-content {
+    padding: 14px;
+  }
+
+  .pedido-modal-content h2 {
+    font-size: 20px;
+  }
+
+  .pedido-modal-content p {
+    font-size: 12px;
+  }
+
+  .pedido-modal-produto-header strong {
+    font-size: 13px;
+  }
+
+  .pedido-modal-produto-preco {
+    font-size: 14px;
+  }
+
+  .pedido-modal-pedido-subitem {
+    font-size: 10px;
+  }
+
+  .pedido-modal-resumo-total {
+    font-size: 17px;
+  }
+}
